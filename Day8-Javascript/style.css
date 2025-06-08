@@ -1,0 +1,47 @@
+html,body {
+  height: 100%;
+  width: 100%;
+  margin:0;
+  padding:0;
+}
+
+.form{
+  border: 2px solid black; 
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  justify-content: space-evenly;
+  /* background-color: #cdcbcb; */ 
+  padding: 20px;
+  width: 40%;
+  text-wrap: wrap;
+  height: 40%;
+  margin: auto;
+   margin-top: 10%;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 22px 0 22px 0;
+}
+.child{
+  background-color: #f5f4f4;
+  padding: 10px;
+  align-items: stretch;
+}
+label{
+  float: left;
+}
+input{
+  float: right;
+}
+.but{
+  margin: auto;
+}
+button{
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  border-radius: 20px;
+  border: none;
+}
