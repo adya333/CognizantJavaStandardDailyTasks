@@ -1,0 +1,77 @@
+
+/* create table employees (EmpId int,
+                          EmpName varchar,
+                          dept varchar,
+                          salary int,exp int, login date);*/
+                         
+                           /*insert into employees values(1, "Adya","Dev",50000,6,"2024-01-01"),(2, "Jane","Dev",50000,3,"2025-12-15"),(3, "Doe","Dev",40000,9,"2025-01-23"),(4, "Xanthus","Design",30000,4,"2025-04-23"),(5, "Mariam","Testing",25300,3,"2025-05-23"),
+(6, "Azriel","Dev",12000,2,"2025-04-23")*/
+
+                         
+/*update employees set salary = 100000 where exp > 5*/
+/*delete from employees where login < DATE_SUB(CURDATE(), INTERVAL 1 YEAR);*/
+/*select * from Employees where login < DATE('now', '-1 year');*/
+/*SELECT * 
+FROM employees e
+WHERE salary > (
+    SELECT AVG(salary)
+    FROM employees
+    WHERE dept = e.dept
+);
+*/
+/*SELECT 
+  SUM(salary) AS Total_Expenses,
+  AVG(salary) AS Average_Salary
+  FROM employees;*/
+  
+  
+/*SELECT EmpName, salary,
+  CASE 
+    WHEN salary >= 50000 THEN 'Senior Position'
+    WHEN salary BETWEEN 30000 AND 49999 THEN 'Mid-Level'
+    ELSE 'Junior/Fresher'
+  END AS SalaryCategory
+  FROM employees;*/
+
+
+/*Second Half Acitivity*/
+/*Filter and Sort Employee Data
+Run the following query:
+SELECT name, department, salary
+FROM employees
+WHERE salary > 50000
+ORDER BY name;
+Task:
+Modify this query to only show employees in the 'Sales' department.
+Change the sort order to descending salary.*/
+
+/*SELECT EmpName, dept, salary
+FROM employees
+WHERE salary >= 50000
+ORDER BY EmpName;*/
+/*Modified*/
+/*SELECT EmpName, dept, salary
+FROM employees
+WHERE salary >=50000 and dept = 'Dev'
+ORDER BY EmpName desc;*/
+
+/*Write a query to find the top 3 highest-paid employees.*/
+/*select * from employees order by salary desc limit 3;*/
+/*select avg(salary) as average from employees;*/
+/*select * from employees where salary > (select avg(salary) from employees)*/
+
+/*create table author (id int, name varchar);*/
+/*insert into author values (1, 'Khaleed Hoseini'),(2,'Jane Austen'),(3,'George Orwell'),(4,'Amish Tripathy'),(5,'Chetan Bhagat'),(6,'Carlos Ruiz Zafon'),(7,'Bonnie Garmus'),(8,'Taylor Jenkins'),(9,'William Shakespeare')*/
+
+
+/*create table books (bid int, auth int, name varchar, genre varchar);*/
+/*insert into books values (1,1,"Kite Runner","Heartbreak"),(2,1,"The Thousand splendid Suns","Heartbreak"),(3,2,"Pride & Prejudice","Drama"),(4,3,"1984","Dystopian"),(5,4,"The secret of Meluha","Mythologival"),(6,4,"The Oath of Vayuputra","Mythological"),(7,5,"3 idiots","Nostaligia"),(8,6,"The Shadow of the wind","Heartbreak"),(9,6,"The Angel of Mist","Heartbreak"),(10,7,"Lessons in Chemistry","Drama"),(11,8,"7 husbands of Evelyn Hugo","Heartbreak"),(12,9,"Cymbeline","Heartbreak")
+*/
+/*select b.bid, a.name, b.name from author as a inner join books as b on a.id = b.auth;*/
+
+select a.name, count(bid) as book_count from author as a inner join books as b on a.id = b.auth GROUP BY a.id order by book_count desc;
+/*select * from books order by genre
+select genre, count(*) from books group by genre*/
+
+
+
